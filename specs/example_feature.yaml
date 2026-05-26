@@ -1,0 +1,23 @@
+feature:
+  name: User Login
+  objective: Allow users to securely log into the system
+
+user_story: 
+  As a user,
+  I want to login with email and password,
+  So that I can access my account
+
+business_rules:
+  - Passwords must be hashed
+  - Invalid credentials return 401
+
+acceptance_criteria:
+  - User can login with valid credentials
+  - Invalid passwords are rejected
+
+non_functional_requirements:
+  - API response under 2 seconds
+
+out_of_scope:
+  - Social login
+  - OAuth integration
