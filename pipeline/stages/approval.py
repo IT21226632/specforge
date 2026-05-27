@@ -1,9 +1,6 @@
-import sys
-
-
 def approval_gate(stage_name: str):
 
-    print(f"\nApprove {stage_name}? (y/n):", flush=True)
+    print("\n[WARNING] Some quality checks failed (non-critical):")
 
     decision = input().strip().lower()
 
