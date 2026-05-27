@@ -36,6 +36,7 @@ jobs:
 
       # ── Tests (Pytest) ────────────────────────────────────────────
       - name: Run Tests
-        run: pytest -q
+        run: pytest pipeline -q
+      
 
       # ── Security checks (Bandit) ───────────────────────────────── 
