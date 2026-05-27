@@ -29,7 +29,7 @@ def generate_code(plan: str):
         contents=prompt,
     )
 
-    generated_code = clean_code_block(response.text)
+    generated_code = clean_code_block(response.text or "")
 
     sandbox_dir = Path("sandbox/generated")
     sandbox_dir.mkdir(parents=True, exist_ok=True)

@@ -29,7 +29,7 @@ def generate_tests(generated_code: str):
         contents=prompt,
     )
 
-    generated_tests = clean_code_block(response.text)
+    generated_tests = clean_code_block(response.text or "")
 
     test_dir = Path("sandbox/generated/tests")
     test_dir.mkdir(parents=True, exist_ok=True)
