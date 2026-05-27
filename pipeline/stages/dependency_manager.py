@@ -205,7 +205,7 @@ def install_dependencies(code_file: Path) -> set[str]:
         check=True,
     )
 
-    print("[✓] Dependencies installed")
+    print("[OK] Dependencies installed")
     return packages
 
 
@@ -243,13 +243,14 @@ def install_with_validation(code_file: Path, max_retries: int = 3) -> bool:
         ok, stderr = validate_imports(code_file)
 
         if ok:
-            print("[✓] Import validation passed")
+            print("[OK] Import validation passed")
+            return True
             return True
 
         # Try to extract the missing module name from the error
         match = re.search(r"No module named '([^']+)'", stderr)
         if not match:
-            print(f"[✗] Import validation failed (non-recoverable):\n{stderr}")
+            print(f"[FAIL] Import validation failed (non-recoverable):\n{stderr}")
             return False
 
         missing_root = match.group(1).split(".")[0]
@@ -261,5 +262,5 @@ def install_with_validation(code_file: Path, max_retries: int = 3) -> bool:
             check=True,
         )
 
-    print("[✗] Import validation failed after max retries")
+    print("[FAIL] Import validation failed after max retries")
     return False

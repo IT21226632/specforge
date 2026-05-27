@@ -1,8 +1,13 @@
+import sys
+
+
 def approval_gate(stage_name: str):
 
-    approval = input(f"\nApprove {stage_name}? (y/n): ")
+    print(f"\nApprove {stage_name}? (y/n):", flush=True)
 
-    if approval.lower() != "y":
-        raise Exception(f"{stage_name} rejected by user.")
+    decision = input().strip().lower()
 
-    print(f"[✓] {stage_name} approved")
+    if decision != "y":
+        raise Exception(f"{stage_name} rejected")
+
+    print(f"[OK] {stage_name} approved", flush=True)

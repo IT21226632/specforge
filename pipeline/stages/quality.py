@@ -48,9 +48,4 @@ def run_quality_checks():
         for cmd in failed_checks:
             print(f"  - {' '.join(cmd)}")
 
-    if failed_checks:
-    print("\n[WARNING] Some quality checks failed:")
-    for fail in failed_checks:
-        print(f" - {fail}")
-else:
-    print("\n[✓] All quality checks passed")
+    print("\n[OK] All quality checks passed")

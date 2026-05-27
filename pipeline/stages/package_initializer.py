@@ -18,4 +18,4 @@ def initialize_packages():
 
         file_path.touch(exist_ok=True)
 
-    print("[✓] Package structure initialized")
+    print("[OK] Package structure initialized")

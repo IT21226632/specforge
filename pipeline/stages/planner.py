@@ -28,5 +28,7 @@ def generate_plan(spec_text: str):
 
     return response.text
 
+    
+
 
     
