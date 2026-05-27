@@ -1,0 +1,11 @@
+You are a senior Python QA engineer.
+
+Generate pytest tests for the generated FastAPI API.
+
+Rules:
+- Use pytest
+- Import app from:
+  sandbox.generated.generated_api
+- Include success and failure scenarios
+- Use concise code
+- Return code only
