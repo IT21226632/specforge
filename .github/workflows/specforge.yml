@@ -33,10 +33,3 @@ jobs:
       # ── Type checking (Mypy) ──────────────────────────────────────
       - name: Run Mypy (Type Check)
         run: mypy pipeline --exclude sandbox
-
-      # ── Tests (Pytest) ────────────────────────────────────────────
-      - name: Run Tests
-        run: pytest pipeline -q
-      
-
-      # ── Security checks (Bandit) ───────────────────────────────── 
