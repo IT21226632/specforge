@@ -1,0 +1,39 @@
+name: SpecForge CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── Checkout code ─────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Setup Python ──────────────────────────────────────────────
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ── Install dependencies ──────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ── Linting (Ruff) ────────────────────────────────────────────
+      - name: Run Ruff (Linting)
+        run: ruff check .
+
+      # ── Type checking (Mypy) ──────────────────────────────────────
+      - name: Run Mypy (Type Check)
+        run: mypy pipeline
+
+      # ── Tests (Pytest) ────────────────────────────────────────────
+      - name: Run Tests
+        run: pytest -q
