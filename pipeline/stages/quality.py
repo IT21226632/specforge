@@ -44,7 +44,7 @@ def run_quality_checks():
                 failed_checks.append(command)
 
     if failed_checks:
-        print(f"\n[WARNING] Some quality checks failed (non-critical):")
+        print("\n[WARNING] Some quality checks failed (non-critical):")
         for cmd in failed_checks:
             print(f"  - {' '.join(cmd)}")
 
