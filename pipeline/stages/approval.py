@@ -1,6 +1,6 @@
 def approval_gate(stage_name: str):
 
-    print("\n[WARNING] Some quality checks failed (non-critical):")
+    print("\nApprove plan? (y/n):")
 
     decision = input().strip().lower()
 
